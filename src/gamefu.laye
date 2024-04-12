@@ -1,0 +1,6 @@
+import "libc.laye";
+
+i32 main() {
+    libc::printf("GameFU -- ROM Emulator\n");
+    return 0;
+}

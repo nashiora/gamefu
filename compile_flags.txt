@@ -1,0 +1,10 @@
+-I./include/api
+-I./include/emu
+-I./include/gfulibc
+-I./include/sys
+-std=c2x
+-pedantic
+-pedantic-errors
+-Werror=return-type
+-D__USE_POSIX
+-D_XOPEN_SOURCE=600
