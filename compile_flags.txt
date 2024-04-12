@@ -2,6 +2,7 @@
 -Ilibc/include
 -Iliblaye/include
 -Isdk/include
+-Igfusx/include
 -std=c2x
 -pedantic
 -pedantic-errors
