@@ -1,15 +1,16 @@
 CC = clang
+LD = clang
 LAYEC = layec
 
-all: gamefu
+all: libc liblaye bios sdk
 
-gamefu: ./src/gamefu.laye
-    $(LAYEC) -o $@ $<
+libc:
 
-pong: ./examples/pong.c
-    # make the standalone executable for now
-    $(CC) -Iinclude/api -o $@ $< ./lib/gamefu/api/unix/log.c
+liblaye:
+
+bios:
+
+sdk:
 
 clean:
-    rm -f gamefu
-    rm -f pong
+    rm -rf out

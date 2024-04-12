@@ -1,10 +1,9 @@
--I./include/api
--I./include/emu
--I./include/gfulibc
--I./include/sys
+-Ibios/include
+-Ilibc/include
+-Iliblaye/include
+-Isdk/include
 -std=c2x
 -pedantic
 -pedantic-errors
 -Werror=return-type
--D__USE_POSIX
--D_XOPEN_SOURCE=600
+-D__GAMEFU__
