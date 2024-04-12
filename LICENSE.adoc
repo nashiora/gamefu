@@ -4,7 +4,7 @@
 
 TODO: Include a brief description of how the GameFU System name and branding can be used when distributing game ROMs commercially.
 
-* The GameFU core is licensed under the <<MPL 2.0>>. This includes the libc, liblaye, BIOS and SDK source code and resulting binaries as well as some command-line tools. The license allows you to use the SDK in a closed-source project ("larger work") but requires you to share any changes you make to the SDK itself. You don't have to publish anything if you use the SDK as-is. The same is true for the BIOS.
+* The GameFU System core is licensed under the <<MPL 2.0>>. This includes the libc, liblaye, BIOS and SDK source code and resulting binaries as well as some command-line tools. The license allows you to use the SDK in a closed-source project ("larger work") but requires you to share any changes you make to the SDK itself. You don't have to publish anything if you use the SDK as-is. The same is true for the BIOS.
 ** Since game ROMs built for the GameFU fantasy console do not require static linking, a game ROM can be distributed without invoking this license; you own that work and its resulting ROM.
 * The build scripts and examples are also MPL licensed, however you may additionally copy and modify their source code for use in your projects without having to share your changes.
 * The GameFU System emulator (GFUSX) is licensed under <<GPLv3>>. This includes its source code and resulting binaries.
