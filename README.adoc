@@ -2,9 +2,6 @@
 
 The GameFU Station is a fantasy console.
 
-== Thoughts
+== Licensing
 
-I could totally do this Laye-first, and I might want to...
-I should probably take a step back, recreate the core structure of this project and save it to another branch just in case, then build up a BIOS first with Laye as much as I can.
-I think I still want a fantasy ISA to make this project more fun, which means the bigger ask is a backend for Laye to support it.
-There's then still an open question of supporting native builds, or just requiring the emulator at all times. I'd like to do both, but it's probably worth just not doing the native build for now...
+See the LICENSE.adoc file for licensing information. Currently, no license is given for anything in this repository. Licenses will be chosen and applied sometime soon.
