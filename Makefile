@@ -6,12 +6,12 @@ CFLAGS =
 LDFLAGS =
 LAYEFLAGS =
 
-GFUX_INCDIR = -Igfux/include
-GFUX_INC = $(wildcard ./gfux/include/*.h) $(wildcard ./gfux/lib/*.h) $(wildcard ./gfux/src/*.h)
-GFUX_LIB = $(wildcard ./gfux/lib/*.c)
-GFUX_OBJ = $(patsubst ./gfux/lib/%.c, ./out/o/gfux/%.o, $(GFUX_LIB))
+GFUSX_INCDIR = -Igfusx/include
+GFUSX_INC = $(wildcard ./gfusx/include/*.h) $(wildcard ./gfusx/lib/*.h) $(wildcard ./gfusx/src/*.h)
+GFUSX_LIB = $(wildcard ./gfusx/lib/*.c)
+GFUSX_OBJ = $(patsubst ./gfusx/lib/%.c, ./out/o/gfusx/%.o, $(GFUSX_LIB))
 
-all: libc liblaye bios sdk gfux
+all: libc liblaye bios sdk gfusx
 
 libc:
 
@@ -21,18 +21,18 @@ bios:
 
 sdk:
 
-gfux: gfuxcli
+gfusx: gfusxcli
 
-gfuxcli: $(GFUX_OBJ) ./out/o/gfuxcli.o $(GFUX_INC)
-	$(LD) $(LDFLAGS) -o ./out/gfuxcli $(GFUX_OBJ) ./out/o/gfuxcli.o
+gfusxcli: $(GFUSX_OBJ) ./out/o/gfusxcli.o $(GFUSX_INC)
+	$(LD) $(LDFLAGS) -o ./out/gfusxcli $(GFUSX_OBJ) ./out/o/gfusxcli.o
 
-./out/o/gfuxcli.o: ./gfux/src/cli.c $(GFUX_INC)
+./out/o/gfusxcli.o: ./gfusx/src/cli.c $(GFUSX_INC)
 	mkdir -p ./out/o
-	$(CC) $(CFLAGS) -c $(GFUX_INCDIR) -o $@ ./gfux/src/cli.c
+	$(CC) $(CFLAGS) -c $(GFUSX_INCDIR) -o $@ ./gfusx/src/cli.c
 
-./out/o/gfux/%.o: ./gfux/lib/%.c $(GFUX_INC)
+./out/o/gfusx/%.o: ./gfusx/lib/%.c $(GFUSX_INC)
 	mkdir -p ./out/o
-	$(CC) $(CFLAGS) -c $(GFUX_INCDIR) -o $@ ./gfux/lib/%.c
+	$(CC) $(CFLAGS) -c $(GFUSX_INCDIR) -o $@ ./gfusx/lib/%.c
 
 clean:
 	rm -rf out

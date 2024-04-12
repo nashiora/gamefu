@@ -2,6 +2,4 @@
 
 The GameFU Station is a fantasy console.
 
-== Licensing
-
-See the LICENSE.adoc file for licensing information. Currently, no license is given for anything in this repository. Licenses will be chosen and applied sometime soon.
+See the link:LICENSE.adoc[license file] for licensing information.
