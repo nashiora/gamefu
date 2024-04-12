@@ -1,2 +1,2 @@
-#include <malloc.h>
+#include <stdlib.h>
 #include <gfuapi.h>
