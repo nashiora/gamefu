@@ -1,2 +1,2 @@
-#include <stdlib.h>
+#include <assert.h>
 #include <gfuapi.h>
