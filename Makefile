@@ -2,6 +2,11 @@
 # Copyright (C) 2024 GameFU Station Dev Team - MPL Licensed
 # See LICENSE.adoc for licensing information for build scripts
 
+# It's entirely possible that this build script becomes something different,
+# like a whole CMake shenanigan or something, in the future.
+# For now, at least, it's plenty simple to write a few makefile rules.
+# The more cross platform this becomes, the more a different build script will be needed.
+
 CC = clang
 LD = clang
 LAYEC = layec
