@@ -15,17 +15,22 @@ CFLAGS =
 LDFLAGS =
 LAYEFLAGS =
 
-GFUASM_INCDIR = -Igfuasm/include
-GFUASM_INC = $(wildcard ./gfuasm/include/*.h) $(wildcard ./gfuasm/src/*.h)
+GFUASM_INCDIR = -Ilca/include -Igfuasm/include
+GFUASM_INC = $(wildcard ./lca/include/*.h) $(wildcard ./gfuasm/include/*.h) $(wildcard ./gfuasm/src/*.h)
 GFUASM_SRC = $(wildcard ./gfuasm/src/*.c)
 GFUASM_OBJ = $(patsubst ./gfuasm/src/%.c, ./out/o/gfuasm_%.o, $(GFUASM_SRC))
 
-GFUSX_INCDIR = -Igfusx/include
-GFUSX_INC = $(wildcard ./gfusx/include/*.h) $(wildcard ./gfusx/lib/*.h) $(wildcard ./gfusx/src/*.h)
+GFULD_INCDIR = -Ilca/include -Igfuld/include
+GFULD_INC = $(wildcard ./lca/include/*.h) $(wildcard ./gfuld/include/*.h) $(wildcard ./gfuld/src/*.h)
+GFULD_SRC = $(wildcard ./gfuld/src/*.c)
+GFULD_OBJ = $(patsubst ./gfuld/src/%.c, ./out/o/gfuld_%.o, $(GFULD_SRC))
+
+GFUSX_INCDIR = -Ilca/include -Igfusx/include
+GFUSX_INC = $(wildcard ./lca/include/*.h) $(wildcard ./gfusx/include/*.h) $(wildcard ./gfusx/lib/*.h) $(wildcard ./gfusx/src/*.h)
 GFUSX_LIB = $(wildcard ./gfusx/lib/*.c)
 GFUSX_OBJ = $(patsubst ./gfusx/lib/%.c, ./out/o/gfusx_%.o, $(GFUSX_LIB))
 
-all: gfuasm libc liblaye bios sdk gfusx
+all: gfuasm gfuld libc liblaye bios sdk gfusx
 
 gfuasm: $(GFUASM_OBJ) $(GFUASM_INC)
 	$(LD) $(LDFLAGS) -o ./out/gfuasm $(GFUASM_OBJ)
@@ -33,6 +38,13 @@ gfuasm: $(GFUASM_OBJ) $(GFUASM_INC)
 ./out/o/gfuasm_%.o: ./gfuasm/src/%.c $(GFUASM_INC)
 	mkdir -p ./out/o
 	$(CC) $(CFLAGS) -c $(GFUASM_INCDIR) -o $@ $<
+
+gfuld: $(GFULD_OBJ) $(GFULD_INC)
+	$(LD) $(LDFLAGS) -o ./out/gfuld $(GFULD_OBJ)
+
+./out/o/gfuld_%.o: ./gfuld/src/%.c $(GFULD_INC)
+	mkdir -p ./out/o
+	$(CC) $(CFLAGS) -c $(GFULD_INCDIR) -o $@ $<
 
 libc:
 

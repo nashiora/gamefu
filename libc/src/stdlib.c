@@ -14,6 +14,10 @@
 extern "C" {
 #endif
 
+void exit(int exit_code) {
+    syscall(__NR_exit, exit_code);
+}
+
 int atoi(const char* string);
 
 void* malloc(size_t size);

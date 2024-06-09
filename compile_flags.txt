@@ -1,8 +1,9 @@
+-Ilca/include
 -Ibios/include
--Ilibc/include
--Iliblaye/include
 -Isdk/include
 -Igfusx/include
+-Igfuasm/include
+-Igfuld/include
 -std=c2x
 -pedantic
 -pedantic-errors

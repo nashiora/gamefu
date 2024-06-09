@@ -16,15 +16,36 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef GFUX_GFUX_H_INCLUDED
-#define GFUX_GFUX_H_INCLUDED
+#ifndef GFUSX_GFUSX_H_INCLUDED
+#define GFUSX_GFUSX_H_INCLUDED
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+#define GFUSX_GENERAL_REGISTER_COUNT 8
+#define GFUSX_STACK_SIZE_MAX 1024
+
+typedef int gfusx_register_t;
+
+typedef struct gfusx_stack_value {
+
+} gfusx_stack_value;
+
+typedef struct gfusx_stack {
+    int count;
+    gfusx_stack_value values[GFUSX_STACK_SIZE_MAX];
+} gfusx_stack;
+
+typedef struct gfusx_machine {
+    gfusx_register_t r[GFUSX_GENERAL_REGISTER_COUNT];
+
+    gfusx_stack stack;
+    gfusx_stack os_stack;
+} gfusx_machine;
+
 #ifdef __cplusplus
 }
 #endif
 
-#endif // GFUX_GFUX_H_INCLUDED
+#endif // GFUSX_GFUSX_H_INCLUDED

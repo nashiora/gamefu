@@ -1,0 +1,13 @@
+extern __gfu_int128_handler
+
+export syscall
+export __gfu_int128_handler_asm
+
+// void syscall(int nr, ...);
+syscall:
+    int $80
+    ret
+
+// 
+__gfu_int128_handler_asm:
+    ret
